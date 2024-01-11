@@ -1,16 +1,14 @@
+import hashlib, re, os, uuid, requests
+from datetime import datetime, timedelta
 from cryptography import x509
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.asymmetric import rsa
-from base64 import b64encode, b64decode
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
+from base64 import b64encode, b64decode
 from lxml import etree
-import hashlib, re
-from datetime import datetime, timedelta
-import uuid
-import requests
-import os
+
 
 # this script will send a sample download request to server and receive a encrypted response
 # this script demonstrate decryption is possible for the SOAP body which means the method to decrypt AES key is correct
